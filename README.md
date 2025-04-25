@@ -7,15 +7,8 @@ L’objectif : concevoir une landing page mobile-first, animée et responsive po
 
 ## 🌐 Aperçu
 
-![Capture d’écran du site](images/demo-foodtech.png) <!-- À remplacer par une vraie image -->
 > 📱 100% responsive (mobile, tablette, desktop)  
 > ⚙️ Animations dynamiques (scroll, hover, parallax)
-
----
-
-## 🚀 Démo en ligne
-
-🔗 [Voir la démo](https://ton-lien-netlify-ou-github-pages.com)
 
 ---
 
