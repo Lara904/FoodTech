@@ -1,0 +1,325 @@
+// Variables couleurs
+$orange: #f60;
+$noir: #222;
+$blanc: #fff;
+$rouge: red;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial, sans-serif";
+  background-color: $noir;
+  color: $blanc;
+  text-align: center;
+}
+
+// Header
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: $orange;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      transform: rotate(10deg);
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background: $blanc;
+      transition: all 0.3s;
+    }
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+
+    &.open {
+      right: 0;
+    }
+
+    .close-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: $blanc;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li a {
+        color: $blanc;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover,
+        &:focus-visible {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+// Hero section
+.hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(255, 102, 0, 0.8));
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInDown 1s ease-out forwards;
+
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Parallax
+.parallax {
+  background: url("images/foodtech-bg.jpg") center/cover no-repeat fixed;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $blanc;
+}
+
+// Scroll animation
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s, transform 0.6s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Services
+.service-card {
+  background: hsla(0, 0%, 100%, 0.1);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover,
+  &:focus-visible {
+    transform: scale(1.05);
+  }
+}
+
+// Bouton
+.btn {
+  background: $orange;
+  padding: 10px 20px;
+  color: $blanc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    animation: bounce 0.5s ease-in-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+// Contact
+.contact {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      width: 90%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    input,
+    textarea {
+      width: 90%;
+      max-width: 400px;
+      margin-bottom: 10px;
+    }
+
+    button.btn {
+      margin-top: 10px;
+      width: 50%;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// Erreur email
+.error-message {
+  display: none;
+  color: $rouge;
+  font-size: 0.9em;
+  margin-top: 5px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.input-error {
+  border: 2px solid $rouge;
+  animation: shake 0.3s ease-in-out;
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+}
+
+// Footer
+footer {
+  padding: 30px 10px;
+  background-color: $noir;
+  color: $blanc;
+  font-size: 0.9em;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+      color: $blanc;
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .contact form label[for="email"] {
+    display: block;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    label {
+      flex: 1 1 40%;
+      margin: 10px 0;
+    }
+
+    input {
+      flex: 1 1 50%;
+      margin: 10px 0;
+    }
+
+    textarea {
+      flex: 1 1 100%;
+    }
+
+    button.btn {
+      flex: 1 1 100%;
+      max-width: 200px;
+      align-self: center;
+    }
+  }
+}

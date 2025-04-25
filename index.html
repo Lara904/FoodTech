@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodTech - Mobile First</title>
+  <meta name="description" content="Découvrez les solutions FoodTech innovantes pour l'industrie alimentaire. Livraison intelligente, produits locaux, restauration automatisée." />
+  <link rel="stylesheet" href="style.min.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <script defer src="scriptAnim.min.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="logo" tabindex="0">FoodTech</div>
+    <button class="burger-menu" aria-label="Ouvrir le menu" aria-controls="main-navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="main-navigation" role="navigation">
+      <button class="close-menu" aria-label="Fermer le menu">✕</button>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Nos Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main id="accueil" class="hero animate-on-scroll">
+    <h1>Découvrez l'avenir de la FoodTech</h1>
+    <p>Des solutions innovantes pour révolutionner l'industrie alimentaire.</p>
+    <a href="#services" class="btn">Voir nos services</a>
+  </main>
+
+  <!-- PARALLAX SECTION -->
+  <section class="parallax" role="region" aria-label="Illustration FoodTech">
+    <div class="parallax-content">
+      <h2>Plongez dans l’univers de la FoodTech</h2>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services animate-on-scroll" role="region" aria-label="Nos services">
+    <h2>Nos Services</h2>
+    <div class="service-card" tabindex="0">
+      <h3>Livraison intelligente</h3>
+      <p>Optimisation de la livraison avec intelligence artificielle.</p>
+    </div>
+    <div class="service-card" tabindex="0">
+      <h3>Produits bio & locaux</h3>
+      <p>Collaboration avec des producteurs locaux pour des produits de qualité.</p>
+    </div>
+    <div class="service-card" tabindex="0">
+      <h3>Restauration automatisée</h3>
+      <p>Robots et nouvelles technologies au service de la restauration.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact animate-on-scroll" role="form" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contactez-nous</h2>
+    <form action="#" method="POST" novalidate>
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" required aria-required="true" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error" />
+      <span id="email-error" class="error-message" aria-live="polite">L'email n'est pas valide.</span>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required aria-required="true"></textarea>
+
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 FoodTech — Tous droits réservés.</p>
+    <ul style="list-style: none; display: flex; gap: 1rem; justify-content: center; padding: 0; margin-top: 10px;">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Mentions légales</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
